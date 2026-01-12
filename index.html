@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>feared.cc — Moved</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== VOID BACKGROUND ===== */
+    .void {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 60%),
+        #000;
+      z-index: -3;
+    }
+
+    /* ===== SHOOTING STARS ===== */
+    .stars {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -2;
+    }
+
+    .star {
+      position: absolute;
+      width: 1px;
+      height: 120px;
+      background: linear-gradient(transparent, white, transparent);
+      opacity: 0.8;
+      animation: shoot 3s linear infinite;
+    }
+
+    @keyframes shoot {
+      from {
+        transform: translateY(-150px) translateX(0);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      to {
+        transform: translateY(110vh) translateX(-300px);
+        opacity: 0;
+      }
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+      text-align: center;
+      z-index: 10;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.9;
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.05em;
+    }
+
+    .glow {
+      color: white;
+      text-shadow:
+        0 0 20px rgba(255,255,255,0.6),
+        0 0 40px rgba(255,255,255,0.4);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow:
+          0 0 20px rgba(255,255,255,0.6),
+          0 0 40px rgba(255,255,255,0.4);
+      }
+      50% {
+        text-shadow:
+          0 0 35px rgba(255,255,255,0.9),
+          0 0 70px rgba(255,255,255,0.6);
+      }
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      font-size: 10px;
+      color: #6b7280;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="void"></div>
+
+  <div class="stars">
+    <div class="star" style="left:10%; animation-delay:0s"></div>
+    <div class="star" style="left:30%; animation-delay:1s"></div>
+    <div class="star" style="left:55%; animation-delay:2s"></div>
+    <div class="star" style="left:75%; animation-delay:1.5s"></div>
+    <div class="star" style="left:90%; animation-delay:0.5s"></div>
+  </div>
+
+  <!-- Content -->
+  <main>
+    <h1>
+      <span class="glow">We</span><br />
+      Moved.
+    </h1>
+
+    <p>
+      QuantV has moved locations.<br />
+      Visit us at <strong>coreapi.online</strong>
+    </p>
+  </main>
+
+  <footer>© 2026 COREAPI.ONLINE</footer>
+</body>
+</html>
